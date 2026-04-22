@@ -1,0 +1,9 @@
+{
+  "name": "notificador-email",
+  "description": "Microservicio suscriptor de Pub/Sub para notificaciones por correo - MOD3-LAB3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.0.0"
+  }
+}
