@@ -53,8 +53,6 @@ La web (Cloud Run) actuará solo como **Publicador**, enviando un mensaje de "Nu
 git clone https://github.com/mleyva/MOD3-LAB3.git
 ```
 
-> 📌 Reemplace `<tu-organizacion>` con el usuario u organización real de GitHub donde está alojado el repositorio.
-
 4. Ingrese al directorio raíz del proyecto:
 
 ```bash
