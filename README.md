@@ -50,7 +50,7 @@ La web (Cloud Run) actuará solo como **Publicador**, enviando un mensaje de "Nu
 3. En la terminal, clone el repositorio del laboratorio:
 
 ```bash
-git clone https://github.com/<tu-organizacion>/MOD3-LAB3.git
+git clone https://github.com/mleyva/MOD3-LAB3.git
 ```
 
 > 📌 Reemplace `<tu-organizacion>` con el usuario u organización real de GitHub donde está alojado el repositorio.
@@ -181,7 +181,7 @@ Esta es la aplicación web que el usuario final utiliza para realizar compras. S
 cd ~/MOD3-LAB3/webapp-publisher
 ```
 
-2. Cambiar la linea 64 del archivo `index.js`
+2. Cambiar la linea 64 del archivo `index.js`. Ir a la `Terminal > Open Editor` (Se abrirá el VSCode). Buscar el archivo y cambiar por el valor correcto.
 
 ```javascript
 ...
@@ -189,7 +189,9 @@ await pubsub.topic('ordenes-compra-[iniciales]').publishMessage({ data });
 ...
 ```
 
-3. Despliegue como un servicio de Cloud Run (contenedor, no función):
+3. Posterior al cambio se tiene que guardar el archivo en `File > Save`. Luego hacer clic en `Open Terminal` para regresar a la terminal de los comandos.
+
+4. Despliegue como un servicio de Cloud Run (contenedor, no función):
 ```bash
 gcloud run deploy webapp-publisher-[iniciales] \
   --source=. \
@@ -235,11 +237,9 @@ gcloud run services describe webapp-publisher-[iniciales] --region=us-central1 -
 
 **2. Validar el Backend (Logs):**
 * Vaya a la consola de GCP y abra el servicio **Cloud Run**.
-* Haga clic en `procesar-cobro` → pestaña **Registros**. Verá el log `[COBRO] ✅ Pago procesado...`.
+* Haga clic en `procesar-cobro-[iniciales]` → pestaña **Logs**. Verá el log `[COBRO] ✅ Pago procesado...`.
 * Regrese y haga clic en `notificador-email` → **Registros**. Verá el log `[EMAIL] 📧 Correo enviado...`.
 * Compare las marcas de tiempo: ambas funciones se ejecutaron **en paralelo**, con una diferencia de milisegundos.
-
-**¡Felicidades!** Ha construido un sistema asíncrono, tolerante a fallos y altamente escalable sobre GCP.
 
 ---
 
@@ -263,7 +263,7 @@ cd ~/MOD3-LAB3/gestor-inventario
 
 3. Despliegue la nueva Cloud Function asegurándose de conectarla al **mismo tópico**:
 ```bash
-gcloud functions deploy gestor-inventario-[iniciale] \
+gcloud functions deploy gestor-inventario-[iniciales] \
   --gen2 \
   --runtime=nodejs22 \
   --region=us-central1 \
