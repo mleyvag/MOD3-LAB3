@@ -50,7 +50,7 @@ La web (Cloud Run) actuará solo como **Publicador**, enviando un mensaje de "Nu
 3. En la terminal, clone el repositorio del laboratorio:
 
 ```bash
-git clone https://github.com/mleyva/MOD3-LAB3.git
+git clone https://github.com/mleyvag/MOD3-LAB3.git
 ```
 
 4. Ingrese al directorio raíz del proyecto:
